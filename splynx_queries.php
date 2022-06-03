@@ -16,8 +16,8 @@ class Queries
             $response = $client->request('POST', 'https://www.site.com', [
                 'form_params' => [
                     'auth_type' => 'admin',
-                    'login' => 'splynx',
-                    'password' => 'B3ne3t$21',
+                    'login' => '#',
+                    'password' => '#',
                 ],
                 'debug' => false,
                 'verify' => false
