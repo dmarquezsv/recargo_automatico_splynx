@@ -13,11 +13,11 @@ class Queries
         try {
 
             $client = new GuzzleHttp\Client();
-            $response = $client->request('POST', 'https://www.site.com', [
+            $response = $client->request('POST', 'https://demo.splynx.com/api/2.0/admin/auth/tokens', [
                 'form_params' => [
                     'auth_type' => 'admin',
-                    'login' => '#',
-                    'password' => '#',
+                    'login' => 'admin',
+                    'password' => 'admin',
                 ],
                 'debug' => false,
                 'verify' => false
@@ -46,7 +46,7 @@ class Queries
             $client = new GuzzleHttp\Client();
             $data = [
                 'customer_id' => $customer_id,
-                'payment_type' => '7',
+                'payment_type' => '1',
                 'receipt_number' => "",
                 'date' => $date,
                 'amount' => $amount,
@@ -58,7 +58,7 @@ class Queries
                 'field_5' => ""
             ];
 
-            $response = $client->request('POST', 'https://www.site.com', [
+            $response = $client->request('POST', 'https://demo.splynx.com/api/2.0/admin/finance/payments', [
                 'headers' => ['Content-Type' => 'application/json', 'Authorization' => 'Splynx-EA (access_token=' . $token . ')'],
                 'body' => json_encode($data)
             ]);
@@ -72,13 +72,13 @@ class Queries
         }
     }
 
-    //renew the token
+    //We renew the token in case the session time expires in the crm
     public static function renew_token($refresh_token)
     {
 
         try {
             $client = new GuzzleHttp\Client();
-            $response = $client->request('GET', 'https://wwww.site.com' . $refresh_token, [
+            $response = $client->request('GET', 'http://demo.splynx.com/api/2.0/admin/auth/tokens/' . $refresh_token, [
                 'debug' => false,
                 'verify' => false
             ]);
@@ -107,7 +107,7 @@ class Queries
 
             $client = new GuzzleHttp\Client();
 
-            $response = $client->request('GET', 'https://www.site.com' . $record, [
+            $response = $client->request('GET', 'http://demo.splynx.com/api/2.0/admin/customers/customer/' . $record, [
                 'headers' => ['Content-Type' => 'application/json', 'Authorization' => 'Splynx-EA (access_token=' . $token . ')'],
                 'debug' => false,
                 'verify' => false

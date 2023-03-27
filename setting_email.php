@@ -27,15 +27,15 @@ class Email
             //Server settings
             $mail->SMTPDebug = 0;                   // Enable verbose debug output
             $mail->isSMTP();                        // Send using SMTP
-            $mail->Host     = 'stmp.email';       // Set the SMTP server to send through
+            $mail->Host     = 'smtp.gmail.com';       // Set the SMTP server to send through
             $mail->SMTPAuth = true;                 // Enable SMTP authentication
-            $mail->Username   = 'user';  // SMTP username
-            $mail->Password   = 'password';       // SMTP password
+            $mail->Username   = 'kayal.autosinnovadores@gmail.com';  // SMTP username
+            $mail->Password   = 'khefzcriahqnbfxz';       // SMTP password
             $mail->SMTPSecure = 'tls';              // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port       = 587;                // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
             //Recipients
-            $mail->setFrom('ejemplo@email', 'Facturación');
+            $mail->setFrom('desarrollo@dmarquez.ga', 'Backend Developer');
             $mail->addAddress($email);              // Add a recipient
             $mail->isHTML(true);                    // Content
             $mail->Subject = 'Comprobante de pago empresa El Salvador';
@@ -76,8 +76,8 @@ class Email
                                             <tr>
                                                 <td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; padding: 20px 0 30px 0;">
                                                     <p style="margin: 0; text-align: justify;">
-                                                            Hola ' . $customer . ' , Su recargo automático mensual ha sido procesada exitosamente. El día de ahora se ha aplicado correctamente a su estado cuenta. Si tiene dudas o preguntas sobre algún detalle de su factura, Llámenos al teléfono +503 6062 6064 o inicie un chat.<br><br>
-                                                        <p>Fecha recargo automático: <b>' . $date . '</b><br>Monto: <b>' . $amount . '</b> </p>
+                                                            Hola ' . $customer . ' , Su recargo automático mensual ha sido procesada exitosamente. El día de ahora se ha aplicado correctamente a su estado cuenta. Si tiene dudas o preguntas sobre algún detalle de su factura, Llámenos al teléfono +503 #### #### o inicie un chat.<br><br>
+                                                        <p>Fecha recargo automático: <b>' . $date . '</b><br>Monto: $ <b>' . $amount . '</b> </p>
                                                     </p>
                                                     <br>
                                                 <p style="text-align: center;">

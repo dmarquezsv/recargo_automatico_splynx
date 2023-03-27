@@ -54,7 +54,8 @@ try {
 
         //It will start with the row since it has a header at the beginning
         //looping through the rows will get the cells
-        for ($row = 10; $row <= $highestRow; $row++) {
+       
+        for ($row = 3; $row <= $highestRow; $row++) {
 
             //if in case the token expired this function renew the token
             if (time() > intval($token[0])) {
@@ -62,15 +63,16 @@ try {
             }
             $customer        = $sheet->getCell("B" . $row)->getValue();
             $record          = $sheet->getCell("C" . $row)->getValue();
-            $application_day = $sheet->getCell("F" . $row)->getValue();
-            $date_generator  = $application_day . "/" . date('m') . "/" . date('Y'); #generate the date since the excel file only brings the day
-            $charges_type    = $sheet->getCell("G" . $row)->getValue();
-            $amount          = $sheet->getCell("H" . $row)->getValue();
-            $pending_charges = $sheet->getCell("Q" . $row)->getValue();
-            $email = Queries::get_email_customer($token[1], $record);
-            #echo $customer . " | " . $record . " | " . $date_generator . " | " . $charges_type . " | " . $amount . " | " . $pending_charges . " | <br>";
-            Queries::payment($token[1], $record, $date_generator, $amount);
-            Email::send_email($customer, $date_generator, $amount, $email);
+            $application_day = $sheet->getCell("D" . $row)->getValue();
+            #$date_generator  = $application_day . "/" . date('m') . "/" . date('Y'); #generate the date since the excel file only brings the day
+            $charges_type    = $sheet->getCell("E" . $row)->getValue();
+            $amount          = $sheet->getCell("F" . $row)->getValue();
+            $pending_charges = $sheet->getCell("G" . $row)->getValue();
+            $email  = $sheet->getCell("H" . $row)->getValue();
+            #$email = Queries::get_email_customer($token[1], $record);
+            #echo $customer . " | " . $record . " | " . $application_day . " | " . $charges_type . " | " . $amount . " | " . $pending_charges . " | " . $email . " <br>";
+            Queries::payment($token[1], $record, $application_day, $amount);
+            Email::send_email($customer, $application_day, $amount, $email);
         } //end for
 
 
@@ -78,7 +80,7 @@ try {
         Queries::log('------- PROCESO FINALIZADO ---------');
         // if everything was correct it redirects you to the home page
         //In case of an error, it will show the message on the web
-        header('Location: read_file_excel.php?status=1');
+        #header('Location: upload_file.php?status=1');
     }
 } catch (Exception $e) {
     echo 'Excepción capturada: ',  $e->getMessage(), "\n";
