@@ -29,7 +29,7 @@ if (isset($_SESSION['status'])) {
 
     <main class="form-signin">
         <form action="login.php" method="POST">
-            <img class="mb-4" src="assets/img/#" alt="" width="75" height="75">
+            <img class="mb-4" src="img/logo.png" alt="" width="150" height="80">
 
             <h1 class="h3 mb-3 fw-normal">Empresa El Salvador</h1>
 
