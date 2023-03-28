@@ -68,7 +68,7 @@ try {
             $charges_type    = $sheet->getCell("E" . $row)->getValue();
             $amount          = $sheet->getCell("F" . $row)->getValue();
             $pending_charges = $sheet->getCell("G" . $row)->getValue();
-            $email  = $sheet->getCell("H" . $row)->getValue();
+            $email           = $sheet->getCell("H" . $row)->getValue();
             #$email = Queries::get_email_customer($token[1], $record);
             #echo $customer . " | " . $record . " | " . $application_day . " | " . $charges_type . " | " . $amount . " | " . $pending_charges . " | " . $email . " <br>";
             Queries::payment($token[1], $record, $application_day, $amount);
@@ -80,7 +80,7 @@ try {
         Queries::log('------- PROCESO FINALIZADO ---------');
         // if everything was correct it redirects you to the home page
         //In case of an error, it will show the message on the web
-       # header('Location: upload_file.php?status=1');
+        header('Location: upload_file.php?status=1');
     }
 } catch (Exception $e) {
     echo 'Excepción capturada: ',  $e->getMessage(), "\n";

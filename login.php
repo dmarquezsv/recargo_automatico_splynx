@@ -3,7 +3,7 @@
 
 $password = '$2y$10$Vf5B6BHZz2Iwe4RF.O8fbut/tYrexO.vxaxlX4T/0AFVzszmu8/W2';
 
-//Deberá autincarse ante proceder con los cambios en el crm
+//You must authenticate before proceeding with the changes in the crm
 if (isset($_POST['login'])) {
     if ($_POST['email'] == 'cobros@email' && password_verify($_POST['password'], $password)) {
         session_start();
