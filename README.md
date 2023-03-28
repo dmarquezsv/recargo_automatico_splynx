@@ -18,7 +18,7 @@ http://localhost/recargo_automatico_splynx/
 3 - Iniciar sesión con las siguientes credenciales:<br>
 - Usuario: <b>cobros@email</b><br>
 - Contraseña: <b>C$b33n3tC</b><br>
-<br>
+
 ![image](https://user-images.githubusercontent.com/94775277/228102103-d3b38ab4-642d-4403-af00-ba357d263d01.png)
 
 <br>
