@@ -80,7 +80,7 @@ try {
         Queries::log('------- PROCESO FINALIZADO ---------');
         // if everything was correct it redirects you to the home page
         //In case of an error, it will show the message on the web
-        header('Location: upload_file.php?status=1');
+       # header('Location: upload_file.php?status=1');
     }
 } catch (Exception $e) {
     echo 'Excepción capturada: ',  $e->getMessage(), "\n";

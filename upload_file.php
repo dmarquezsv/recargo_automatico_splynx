@@ -50,7 +50,7 @@
         <br><br>
 
         <footer class="mt-auto">
-            <p>TODOS LOS DERECHOS RESERVADOS Daniel Márquez © 2022</p>
+            <p>TODOS LOS DERECHOS RESERVADOS DANIEL MARQUEZ © 2022</p>
         </footer>
 
     </div>
